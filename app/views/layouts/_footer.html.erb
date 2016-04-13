@@ -1,10 +1,11 @@
 <footer class="container">
 	<div class="row">
 		<section class="col-sm-4">
-			Copyright 2016
+			<%= link_to image_tag("rails_logo.jpg", alt: "Rails logo", size: "80x70",class: "img-rounded"),
+			 						'http://rubyonrails.org/' %>
 		</section>
-		<section class="col-sm-8">
-			All rights revised.
-		</section>
+	</div>
+	<div class="row">
+		<p class="text-left">Copyright &copy; 2013 - <%= Time.now.year %> Stock Rocker</p>
 	</div>
 </footer>
