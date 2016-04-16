@@ -1,0 +1,11 @@
+<h1>Stock Rocker Contact Us</h1>
+
+<p>
+	Message from <%= @contact.name %>:
+</p>
+<p>
+  <%= @contact.message %>
+</p>
+<p>
+	To respond to this email them back on <%= mail_to @contact.email %>
+</p>

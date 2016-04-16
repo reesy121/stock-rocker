@@ -1,0 +1,14 @@
+<%=form_for @contact, url: contact_path do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name, class: ' text-name form-control', placeholder: "Your name" %>
+	</br>
+	<%= f.label :email %>
+	<%= f.email_field :email, class: 'text-email form-control', placeholder: "Your Email" %>
+	</br>
+	<%= f.label :message%>
+	<%= f.text_area :message, class: 'form-control', rows: 10, placeholder: "Type a message here" %>
+	</br>,
+	<%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

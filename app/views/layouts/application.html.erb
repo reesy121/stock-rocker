@@ -9,16 +9,14 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main" class="container">
-      <div class="row">
-        <div class="col-lg-12">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-      </div>
-    </main>
+      <%= render 'layouts/header' %>
+    <div class="container main">
+         <%= render 'layouts/messages' %>
+         <%= yield %>
+    </div>
+    <div class="container">
+      <%= debug(params) if Rails.env.development? %>
+    </div>
     <%= render 'layouts/footer' %>
   </body>
 </html>
