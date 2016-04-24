@@ -1,4 +1,4 @@
-class Contact #< ActiveRecord::Base
+class Contact #< ActiveRecord::Base #Only for sending emails
 
   include ActiveModel::Model
   include ActiveModel::Conversion
