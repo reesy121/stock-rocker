@@ -1,0 +1,11 @@
+<% provide(:title, 'New Blog') %>
+<% provide(:button_text, "Create Blog") %>
+<div class="row">
+	<%= render 'show' if preview_button? %>
+	<div class="col-md-8 col-md-offset-2">
+		<h1 class="center">Create a new blog</h1>
+		<div class="well bs-component">
+			<%= render 'form' %>	
+		</div>	
+	</div>
+</div>

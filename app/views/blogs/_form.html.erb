@@ -1,0 +1,27 @@
+<%= form_for(@blog) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control', placeholder: "The post title" %>
+
+  <%= f.label :sub_title %>
+  <%= f.text_field :sub_title, class: 'form-control', placeholder: "The post sub title (song title usually)" %>
+
+  <%= f.label :tags %>
+  <%= f.text_area :tags, class: 'form-control', placeholder: "Use to have as meta tags e.g Rock Roll Rocker" %>
+
+  <div id='posts'>
+      <%= f.fields_for :posts do |post| %>
+
+        <%= render 'blogs/post_fields', f: post %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association 'Add Post Section', f, :posts, class: "btn btn-info" %>
+      </div>
+  </div>
+
+</br>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <%= f.submit "Preview", class: "btn btn-primary", name: "preview_button" %>
+  <%= link_to 'Back', blogs_path , class: "btn btn-default" %>  
+<% end %>
