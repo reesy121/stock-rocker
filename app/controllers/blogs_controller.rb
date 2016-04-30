@@ -18,7 +18,8 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     @blog = Blog.new
-    #@blog.posts.build
+    # Only build on new and invalid
+    @blog.posts.build && @blog.categorizations.build unless performed?
   end
 
   # GET /blogs/1/edit
@@ -38,6 +39,7 @@ class BlogsController < ApplicationController
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
         format.json { render :show, status: :created, location: @blog }
       else
+        clear_preview_button
         format.html { render :new }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
@@ -75,13 +77,10 @@ class BlogsController < ApplicationController
       @blog = Blog.find(params[:id])
     end
 
-    def method_name
-      
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-       params.require(:blog).permit(:title, :sub_title, :tags, posts_attributes: [:id, :blog_id, :content, :_destroy])
+       params.require(:blog).permit(:title, :sub_title, :tags, posts_attributes: [:id, :blog_id, :content, :_destroy],
+                      categorizations_attributes: [:id, :_destroy, :category_id, category_attributes: [:id, :_destroy, :name]])
     end
 
 

@@ -1,0 +1,7 @@
+<div class='nested-fields categorization-fields'>
+	<div class="category_from_list">
+		<%= f.association :category,  collection: Category.all %>
+	</div>
+		<%= link_to_add_association "Insert New Category", f, :category, class: "add-tag btn btn-default" %>
+		<%= link_to_remove_association "Remove", f, class: "remove-tag btn btn-default" %>
+</div>	

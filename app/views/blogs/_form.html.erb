@@ -1,19 +1,22 @@
-<%= form_for(@blog) do |f| %>
+<%= simple_form_for(@blog) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title, class: 'form-control', placeholder: "The post title" %>
+  <%= f.input :title, placeholder: "The post title" %>
 
-  <%= f.label :sub_title %>
-  <%= f.text_field :sub_title, class: 'form-control', placeholder: "The post sub title (song title usually)" %>
+  <%= f.input :sub_title, placeholder: "The post sub title (song title usually)" %>
 
-  <%= f.label :tags %>
-  <%= f.text_area :tags, class: 'form-control', placeholder: "Use to have as meta tags e.g Rock Roll Rocker" %>
+  <div id="categories">
+      <%= f.simple_fields_for :categorizations do |categorization| %>
+        <%= render 'categorization_fields', f: categorization %>
+       <% end %>
+        <%= link_to_add_association 'Add Blog Category', f, :categorizations, class: "btn btn-default" %>
+  </div>
+
+  <%= f.input :tags, placeholder: "Use to have as meta tags e.g Rock Roll Rocker" %>
 
   <div id='posts'>
       <%= f.fields_for :posts do |post| %>
-
-        <%= render 'blogs/post_fields', f: post %>
+        <%= render 'post_fields', f: post %>
       <% end %>
       <div class='links'>
         <%= link_to_add_association 'Add Post Section', f, :posts, class: "btn btn-info" %>

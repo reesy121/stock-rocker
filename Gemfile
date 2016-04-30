@@ -15,9 +15,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-#
+# For HTML Editor
 gem "paperclip", "~> 5.0.0.beta1"
 gem "ckeditor"
+#
+gem 'simple_form'
 # Cocoon to make child records in parent form
 gem "cocoon"
 # Use jquery as the JavaScript library
