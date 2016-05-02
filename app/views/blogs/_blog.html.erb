@@ -10,6 +10,6 @@
 		<% end %>
 	</div>
 	
-	<%= link_to 'Blogs', blogs_path, class: "btn btn-primary" if !preview_button? || logged_in? %>
-	<%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-danger" if !preview_button? && users_blog(@blog) %>
+	<%= link_to 'Blogs', blogs_path, class: "btn btn-primary" if !preview_button? %>
+	<%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-danger" if users_blog?(@blog) %>
 </div>

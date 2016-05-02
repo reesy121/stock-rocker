@@ -4,7 +4,6 @@
       <th>Title</th>
       <th>Sub Title</th>
       <th>Posted At<th>
-      <th>Author<th>
       <th></th>
     </tr>
   </thead>
@@ -14,7 +13,7 @@
       <td><%= blog.title %></td>
       <td><%= blog.sub_title %></td>
       <td><%= blog.created_at.to_date %></td>
-      <td><%= blog.user.full_name %></td>
+      <td> by <%= blog.user.full_name %></td>
       <td>
         <%= link_to 'Read', blog, class: "btn btn-primary" %>
       <% if users_blog?(blog) %>
