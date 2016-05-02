@@ -2,6 +2,7 @@ class BlogsController < ApplicationController
   include BlogsHelper
 
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :confirm_user, except: [:index, :show]
 
   # GET /blogs
   # GET /blogs.json
@@ -30,7 +31,7 @@ class BlogsController < ApplicationController
   # blog /blogs
   # blog /blogs.json
   def create
-    @blog = Blog.new(blog_params)
+    @blog = current_user.blogs.new(blog_params)
 
     respond_to do |format|
       if (preview_button? && @blog.valid?)
@@ -50,13 +51,17 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1.json
   def update
     respond_to do |format|
-      if preview_button? || !@project.update
+      if (preview_button? && @blog.valid?)
         @blog.assign_attributes(blog_params)
         format.html { render :edit }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
-      else @blog.update(blog_params)
+       elsif @blog.update(blog_params)
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
         format.json { render :show, status: :ok, location: @blog }
+       else
+        clear_preview_button
+        format.html { render :new }
+        format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -79,7 +84,7 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-       params.require(:blog).permit(:title, :sub_title, :tags, posts_attributes: [:id, :blog_id, :content, :_destroy],
+       params.require(:blog).permit(:title, :sub_title, :tags, :user_id, posts_attributes: [:id, :blog_id, :content, :_destroy],
                       categorizations_attributes: [:id, :_destroy, :category_id, category_attributes: [:id, :_destroy, :name]])
     end
 

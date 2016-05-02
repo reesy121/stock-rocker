@@ -1,6 +1,8 @@
 <h1><%= @blog.title %></h1>
 <h3 class="center"><%= @blog.sub_title %></h3>
-<h2>Posted on <%= @blog.created_at.to_formatted_s(:long_ordinal) unless @blog.created_at.nil? %> by</h2>
+<h2>Posted on <%= @blog.created_at.to_formatted_s(:long_ordinal) unless @blog.created_at.nil? %> by
+	<%= @blog.user.first_name %> <%= @blog.user.last_name %>
+</h2>
 <div class="col-md-10 col-md-offset-1">
 	<div class="well bs-component">
 		<% @blog.posts.each do |post| %>	
@@ -8,5 +10,6 @@
 		<% end %>
 	</div>
 	
-	<%= link_to 'Blogs', blogs_path, class: "btn btn-primary" if !preview_button? %>
+	<%= link_to 'Blogs', blogs_path, class: "btn btn-primary" if !preview_button? || logged_in? %>
+	<%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-danger" if !preview_button? && users_blog(@blog) %>
 </div>

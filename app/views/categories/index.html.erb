@@ -1,0 +1,10 @@
+<% provide(:title, "Categories" )%>
+<h1>Categories</h1>
+<div class="bs-component">
+  <div class="col-md-10 col-md-offset-1">
+  	<% @categories.each do |category| %>
+  		<h3><%= link_to category.name, category %></h3>
+  		<%= pluralize_to_s(category.blogs.count, "Blog") %> 
+  	<% end %>
+  </div>
+ </div>
