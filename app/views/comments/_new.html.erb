@@ -1,0 +1,8 @@
+<%= simple_form_for [@blog, @blog.comments.new] do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.input :content, label: "Comment", placeholder: "Type your comment here. Min 5 chars, Max 255" %>
+
+</br>
+  <%= f.submit "Comment", class: "btn btn-primary" %>
+<% end %>

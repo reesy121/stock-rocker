@@ -1,5 +1,21 @@
 <% provide(:title, @blog.title) %>
 <% provide(:description, @blog.tags) %>
 <div class="row">
-		<%= render @blog %>
+		<%= render @blog %>	
+	<div class="col-md-4 col-md-offset-1">
+		<div class="well bs-component">
+			<section id="comments_section">
+				<% if current_user %>
+					<%= render 'comments/new' %>
+				<% else %>
+					<%= link_to("Please login to comment", new_user_session_path) %>
+				<% end %>
+			</section>
+		</div>
+	</div>
+	<div class="col-md-5 col-md-offset-1">
+		<div class="well bs-component">
+			<%= render 'comments/show' %>
+		</div>
+	</div>	
 </div>

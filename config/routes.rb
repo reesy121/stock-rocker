@@ -2,12 +2,16 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   mount Ckeditor::Engine => '/ckeditor'
-  root 'static_pages#home'
+  root :to => "blogs#show", :id => Blog.last.id
+
   get 'about'     =>  'static_pages#about'
   get 'contact'   =>  'contacts#new'
   post 'contact'  =>  'contacts#create'
-  resources :blogs
+  resources :blogs do
+    resources :comments, :only => [:create]
+  end
   resources :categories, only: [:show, :index]
+  resources :comments, only: [:destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
