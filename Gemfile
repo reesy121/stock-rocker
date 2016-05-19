@@ -42,10 +42,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 group :development do
   gem 'rails_layout'
-  gem 'capistrano', '~> 3.1.0'
+  gem 'capistrano', '~> 3.4.0'
   gem 'capistrano-rails', '~> 1.1.1'
   # Add this if you're using rbenv
   gem 'capistrano-rbenv', github: "capistrano/rbenv"
+  # Add this if you're using rvm
+  # gem 'capistrano-rvm', github: "capistrano/rvm"
 end
 
 group :test do
