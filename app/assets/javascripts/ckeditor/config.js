@@ -1,5 +1,5 @@
-CKEDITOR.editorConfig = function( config ){
+CKEDITOR.editorConfig = function( config ) {
 	config.skin = 'moono',
 	config.disableNativeSpellChecker = true,
-	config.scayt_autoStartup = true,
+	config.scayt_autoStartup = true
 	};
