@@ -1,0 +1,296 @@
+ DEBUG [7cb76a54] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as deploy@139.59.172.2
+ DEBUG [7cb76a54] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [7cb76a54] Finished in 0.676 seconds with exit status 0 (successful).
+  INFO [bd9ef5d6] Running /usr/bin/env mkdir -p /tmp/stock_rocker/ as deploy@139.59.172.2
+ DEBUG [bd9ef5d6] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /tmp/stock_rocker/ )
+  INFO [bd9ef5d6] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/stock_rocker/git-ssh.sh 0.0%
+  INFO Uploading /tmp/stock_rocker/git-ssh.sh 100.0%
+  INFO [ee022e6b] Running /usr/bin/env chmod +x /tmp/stock_rocker/git-ssh.sh as deploy@139.59.172.2
+ DEBUG [ee022e6b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env chmod +x /tmp/stock_rocker/git-ssh.sh )
+  INFO [ee022e6b] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [003e6e62] Running /usr/bin/env git ls-remote --heads git@github.com:reesy121/stock-rocker.git as deploy@139.59.172.2
+ DEBUG [003e6e62] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/stock_rocker/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:reesy121/stock-rocker.git )
+ DEBUG [003e6e62] 	8049f60552cbda9914a1e81bd34e0a1a0c21a1a1	refs/heads/master
+  INFO [003e6e62] Finished in 1.545 seconds with exit status 0 (successful).
+  INFO [77ddc8d4] Running /usr/bin/env mkdir -p /home/deploy/stock_rocker/shared /home/deploy/stock_rocker/releases as deploy@139.59.172.2
+ DEBUG [77ddc8d4] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/deploy/stock_rocker/shared /home/deploy/stock_rocker/releases )
+  INFO [77ddc8d4] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [3cb0fd9c] Running /usr/bin/env mkdir -p /home/deploy/stock_rocker/shared/bin /home/deploy/stock_rocker/shared/log /home/deploy/stock_rocker/shared/tmp/pids /home/deploy/stock_rocker/shared/tmp/cache /home/deploy/stock_rocker/shared/tmp/sockets /home/deploy/stock_rocker/shared/vendor/bundle /home/deploy/stock_rocker/shared/public/system /home/deploy/stock_rocker/shared/public/assets as deploy@139.59.172.2
+ DEBUG [3cb0fd9c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/deploy/stock_rocker/shared/bin /home/deploy/stock_rocker/shared/log /home/deploy/stock_rocker/shared/tmp/pids /home/deploy/stock_rocker/shared/tmp/cache /home/deploy/stock_rocker/shared/tmp/sockets /home/deploy/stock_rocker/shared/vendor/bundle /home/deploy/stock_rocker/shared/public/system /home/deploy/stock_rocker/shared/public/assets )
+  INFO [3cb0fd9c] Finished in 0.034 seconds with exit status 0 (successful).
+  INFO [74a22536] Running /usr/bin/env mkdir -p /home/deploy/stock_rocker/shared/config /home/deploy/stock_rocker/shared/config as deploy@139.59.172.2
+ DEBUG [74a22536] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/deploy/stock_rocker/shared/config /home/deploy/stock_rocker/shared/config )
+  INFO [74a22536] Finished in 0.032 seconds with exit status 0 (successful).
+ DEBUG [9b87de1c] Running [ -f /home/deploy/stock_rocker/shared/config/database.yml ] as deploy@139.59.172.2
+ DEBUG [9b87de1c] Command: [ -f /home/deploy/stock_rocker/shared/config/database.yml ]
+ DEBUG [9b87de1c] Finished in 0.029 seconds with exit status 0 (successful).
+ DEBUG [4f5a752f] Running [ -f /home/deploy/stock_rocker/shared/config/secrets.yml ] as deploy@139.59.172.2
+ DEBUG [4f5a752f] Command: [ -f /home/deploy/stock_rocker/shared/config/secrets.yml ]
+ DEBUG [4f5a752f] Finished in 0.029 seconds with exit status 0 (successful).
+ DEBUG [4396da5e] Running [ -f /home/deploy/stock_rocker/current/REVISION ] as deploy@139.59.172.2
+ DEBUG [4396da5e] Command: [ -f /home/deploy/stock_rocker/current/REVISION ]
+ DEBUG [4396da5e] Finished in 0.029 seconds with exit status 1 (failed).
+ DEBUG [3d30e1ac] Running [ -f /home/deploy/stock_rocker/repo/HEAD ] as deploy@139.59.172.2
+ DEBUG [3d30e1ac] Command: [ -f /home/deploy/stock_rocker/repo/HEAD ]
+ DEBUG [3d30e1ac] Finished in 0.029 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/stock_rocker/repo
+ DEBUG [812dbece] Running if test ! -d /home/deploy/stock_rocker/repo; then echo "Directory does not exist '/home/deploy/stock_rocker/repo'" 1>&2; false; fi as deploy@139.59.172.2
+ DEBUG [812dbece] Command: if test ! -d /home/deploy/stock_rocker/repo; then echo "Directory does not exist '/home/deploy/stock_rocker/repo'" 1>&2; false; fi
+ DEBUG [812dbece] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [bdb64d39] Running /usr/bin/env git remote update as deploy@139.59.172.2
+ DEBUG [bdb64d39] Command: cd /home/deploy/stock_rocker/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/stock_rocker/git-ssh.sh" ; /usr/bin/env git remote update )
+ DEBUG [bdb64d39] 	Fetching origin
+  INFO [bdb64d39] Finished in 1.422 seconds with exit status 0 (successful).
+ DEBUG [0f884c18] Running if test ! -d /home/deploy/stock_rocker/repo; then echo "Directory does not exist '/home/deploy/stock_rocker/repo'" 1>&2; false; fi as deploy@139.59.172.2
+ DEBUG [0f884c18] Command: if test ! -d /home/deploy/stock_rocker/repo; then echo "Directory does not exist '/home/deploy/stock_rocker/repo'" 1>&2; false; fi
+ DEBUG [0f884c18] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [52433006] Running /usr/bin/env mkdir -p /home/deploy/stock_rocker/releases/20160523212355 as deploy@139.59.172.2
+ DEBUG [52433006] Command: cd /home/deploy/stock_rocker/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/stock_rocker/git-ssh.sh" ; /usr/bin/env mkdir -p /home/deploy/stock_rocker/releases/20160523212355 )
+  INFO [52433006] Finished in 0.028 seconds with exit status 0 (successful).
+  INFO [b4c6b056] Running /usr/bin/env git archive master | tar -x -f - -C /home/deploy/stock_rocker/releases/20160523212355 as deploy@139.59.172.2
+ DEBUG [b4c6b056] Command: cd /home/deploy/stock_rocker/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/stock_rocker/git-ssh.sh" ; /usr/bin/env git archive master | tar -x -f - -C /home/deploy/stock_rocker/releases/20160523212355 )
+  INFO [b4c6b056] Finished in 0.045 seconds with exit status 0 (successful).
+ DEBUG [c4be236a] Running if test ! -d /home/deploy/stock_rocker/repo; then echo "Directory does not exist '/home/deploy/stock_rocker/repo'" 1>&2; false; fi as deploy@139.59.172.2
+ DEBUG [c4be236a] Command: if test ! -d /home/deploy/stock_rocker/repo; then echo "Directory does not exist '/home/deploy/stock_rocker/repo'" 1>&2; false; fi
+ DEBUG [c4be236a] Finished in 0.026 seconds with exit status 0 (successful).
+ DEBUG [5d561308] Running /usr/bin/env git rev-list --max-count=1 --abbrev-commit master as deploy@139.59.172.2
+ DEBUG [5d561308] Command: cd /home/deploy/stock_rocker/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/stock_rocker/git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 --abbrev-commit master )
+ DEBUG [5d561308] 	8049f60
+ DEBUG [5d561308] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [e3612c04] Running if test ! -d /home/deploy/stock_rocker/releases/20160523212355; then echo "Directory does not exist '/home/deploy/stock_rocker/releases/20160523212355'" 1>&2; false; fi as deploy@139.59.172.2
+ DEBUG [e3612c04] Command: if test ! -d /home/deploy/stock_rocker/releases/20160523212355; then echo "Directory does not exist '/home/deploy/stock_rocker/releases/20160523212355'" 1>&2; false; fi
+ DEBUG [e3612c04] Finished in 0.034 seconds with exit status 0 (successful).
+  INFO [5bf71fe4] Running /usr/bin/env echo "8049f60" >> REVISION as deploy@139.59.172.2
+ DEBUG [5bf71fe4] Command: cd /home/deploy/stock_rocker/releases/20160523212355 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env echo "8049f60" >> REVISION )
+  INFO [5bf71fe4] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [26a95583] Running /usr/bin/env mkdir -p /home/deploy/stock_rocker/releases/20160523212355/config /home/deploy/stock_rocker/releases/20160523212355/config as deploy@139.59.172.2
+ DEBUG [26a95583] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/deploy/stock_rocker/releases/20160523212355/config /home/deploy/stock_rocker/releases/20160523212355/config )
+  INFO [26a95583] Finished in 0.032 seconds with exit status 0 (successful).
+ DEBUG [4fe5b34e] Running [ -L /home/deploy/stock_rocker/releases/20160523212355/config/database.yml ] as deploy@139.59.172.2
+ DEBUG [4fe5b34e] Command: [ -L /home/deploy/stock_rocker/releases/20160523212355/config/database.yml ]
+ DEBUG [4fe5b34e] Finished in 0.035 seconds with exit status 1 (failed).
+ DEBUG [223cf7dd] Running [ -f /home/deploy/stock_rocker/releases/20160523212355/config/database.yml ] as deploy@139.59.172.2
+ DEBUG [223cf7dd] Command: [ -f /home/deploy/stock_rocker/releases/20160523212355/config/database.yml ]
+ DEBUG [223cf7dd] Finished in 0.029 seconds with exit status 0 (successful).
+  INFO [48efdf63] Running /usr/bin/env rm /home/deploy/stock_rocker/releases/20160523212355/config/database.yml as deploy@139.59.172.2
+ DEBUG [48efdf63] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm /home/deploy/stock_rocker/releases/20160523212355/config/database.yml )
+  INFO [48efdf63] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [a4da1e87] Running /usr/bin/env ln -s /home/deploy/stock_rocker/shared/config/database.yml /home/deploy/stock_rocker/releases/20160523212355/config/database.yml as deploy@139.59.172.2
+ DEBUG [a4da1e87] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/deploy/stock_rocker/shared/config/database.yml /home/deploy/stock_rocker/releases/20160523212355/config/database.yml )
+  INFO [a4da1e87] Finished in 0.034 seconds with exit status 0 (successful).
+ DEBUG [23856744] Running [ -L /home/deploy/stock_rocker/releases/20160523212355/config/secrets.yml ] as deploy@139.59.172.2
+ DEBUG [23856744] Command: [ -L /home/deploy/stock_rocker/releases/20160523212355/config/secrets.yml ]
+ DEBUG [23856744] Finished in 0.030 seconds with exit status 1 (failed).
+ DEBUG [6170f282] Running [ -f /home/deploy/stock_rocker/releases/20160523212355/config/secrets.yml ] as deploy@139.59.172.2
+ DEBUG [6170f282] Command: [ -f /home/deploy/stock_rocker/releases/20160523212355/config/secrets.yml ]
+ DEBUG [6170f282] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO [fde1b859] Running /usr/bin/env rm /home/deploy/stock_rocker/releases/20160523212355/config/secrets.yml as deploy@139.59.172.2
+ DEBUG [fde1b859] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm /home/deploy/stock_rocker/releases/20160523212355/config/secrets.yml )
+  INFO [fde1b859] Finished in 0.036 seconds with exit status 0 (successful).
+  INFO [6733dcd3] Running /usr/bin/env ln -s /home/deploy/stock_rocker/shared/config/secrets.yml /home/deploy/stock_rocker/releases/20160523212355/config/secrets.yml as deploy@139.59.172.2
+ DEBUG [6733dcd3] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/deploy/stock_rocker/shared/config/secrets.yml /home/deploy/stock_rocker/releases/20160523212355/config/secrets.yml )
+  INFO [6733dcd3] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [149931a3] Running /usr/bin/env mkdir -p /home/deploy/stock_rocker/releases/20160523212355 /home/deploy/stock_rocker/releases/20160523212355 /home/deploy/stock_rocker/releases/20160523212355/tmp /home/deploy/stock_rocker/releases/20160523212355/tmp /home/deploy/stock_rocker/releases/20160523212355/tmp /home/deploy/stock_rocker/releases/20160523212355/vendor /home/deploy/stock_rocker/releases/20160523212355/public /home/deploy/stock_rocker/releases/20160523212355/public as deploy@139.59.172.2
+ DEBUG [149931a3] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/deploy/stock_rocker/releases/20160523212355 /home/deploy/stock_rocker/releases/20160523212355 /home/deploy/stock_rocker/releases/20160523212355/tmp /home/deploy/stock_rocker/releases/20160523212355/tmp /home/deploy/stock_rocker/releases/20160523212355/tmp /home/deploy/stock_rocker/releases/20160523212355/vendor /home/deploy/stock_rocker/releases/20160523212355/public /home/deploy/stock_rocker/releases/20160523212355/public )
+  INFO [149931a3] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [61a14b88] Running [ -L /home/deploy/stock_rocker/releases/20160523212355/bin ] as deploy@139.59.172.2
+ DEBUG [61a14b88] Command: [ -L /home/deploy/stock_rocker/releases/20160523212355/bin ]
+ DEBUG [61a14b88] Finished in 0.027 seconds with exit status 1 (failed).
+ DEBUG [2a119c5e] Running [ -d /home/deploy/stock_rocker/releases/20160523212355/bin ] as deploy@139.59.172.2
+ DEBUG [2a119c5e] Command: [ -d /home/deploy/stock_rocker/releases/20160523212355/bin ]
+ DEBUG [2a119c5e] Finished in 0.029 seconds with exit status 0 (successful).
+  INFO [58affb0c] Running /usr/bin/env rm -rf /home/deploy/stock_rocker/releases/20160523212355/bin as deploy@139.59.172.2
+ DEBUG [58affb0c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /home/deploy/stock_rocker/releases/20160523212355/bin )
+  INFO [58affb0c] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO [d97cad21] Running /usr/bin/env ln -s /home/deploy/stock_rocker/shared/bin /home/deploy/stock_rocker/releases/20160523212355/bin as deploy@139.59.172.2
+ DEBUG [d97cad21] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/deploy/stock_rocker/shared/bin /home/deploy/stock_rocker/releases/20160523212355/bin )
+  INFO [d97cad21] Finished in 0.067 seconds with exit status 0 (successful).
+ DEBUG [229f5a84] Running [ -L /home/deploy/stock_rocker/releases/20160523212355/log ] as deploy@139.59.172.2
+ DEBUG [229f5a84] Command: [ -L /home/deploy/stock_rocker/releases/20160523212355/log ]
+ DEBUG [229f5a84] Finished in 0.029 seconds with exit status 1 (failed).
+ DEBUG [33c1b9cf] Running [ -d /home/deploy/stock_rocker/releases/20160523212355/log ] as deploy@139.59.172.2
+ DEBUG [33c1b9cf] Command: [ -d /home/deploy/stock_rocker/releases/20160523212355/log ]
+ DEBUG [33c1b9cf] Finished in 0.029 seconds with exit status 0 (successful).
+  INFO [fa600c14] Running /usr/bin/env rm -rf /home/deploy/stock_rocker/releases/20160523212355/log as deploy@139.59.172.2
+ DEBUG [fa600c14] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /home/deploy/stock_rocker/releases/20160523212355/log )
+  INFO [fa600c14] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [0960974e] Running /usr/bin/env ln -s /home/deploy/stock_rocker/shared/log /home/deploy/stock_rocker/releases/20160523212355/log as deploy@139.59.172.2
+ DEBUG [0960974e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/deploy/stock_rocker/shared/log /home/deploy/stock_rocker/releases/20160523212355/log )
+  INFO [0960974e] Finished in 0.030 seconds with exit status 0 (successful).
+ DEBUG [ee283a75] Running [ -L /home/deploy/stock_rocker/releases/20160523212355/tmp/pids ] as deploy@139.59.172.2
+ DEBUG [ee283a75] Command: [ -L /home/deploy/stock_rocker/releases/20160523212355/tmp/pids ]
+ DEBUG [ee283a75] Finished in 0.029 seconds with exit status 1 (failed).
+ DEBUG [51276bb8] Running [ -d /home/deploy/stock_rocker/releases/20160523212355/tmp/pids ] as deploy@139.59.172.2
+ DEBUG [51276bb8] Command: [ -d /home/deploy/stock_rocker/releases/20160523212355/tmp/pids ]
+ DEBUG [51276bb8] Finished in 0.034 seconds with exit status 1 (failed).
+  INFO [197c6476] Running /usr/bin/env ln -s /home/deploy/stock_rocker/shared/tmp/pids /home/deploy/stock_rocker/releases/20160523212355/tmp/pids as deploy@139.59.172.2
+ DEBUG [197c6476] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/deploy/stock_rocker/shared/tmp/pids /home/deploy/stock_rocker/releases/20160523212355/tmp/pids )
+  INFO [197c6476] Finished in 0.032 seconds with exit status 0 (successful).
+ DEBUG [0dfc8893] Running [ -L /home/deploy/stock_rocker/releases/20160523212355/tmp/cache ] as deploy@139.59.172.2
+ DEBUG [0dfc8893] Command: [ -L /home/deploy/stock_rocker/releases/20160523212355/tmp/cache ]
+ DEBUG [0dfc8893] Finished in 0.030 seconds with exit status 1 (failed).
+ DEBUG [81e198fb] Running [ -d /home/deploy/stock_rocker/releases/20160523212355/tmp/cache ] as deploy@139.59.172.2
+ DEBUG [81e198fb] Command: [ -d /home/deploy/stock_rocker/releases/20160523212355/tmp/cache ]
+ DEBUG [81e198fb] Finished in 0.030 seconds with exit status 1 (failed).
+  INFO [874f85ab] Running /usr/bin/env ln -s /home/deploy/stock_rocker/shared/tmp/cache /home/deploy/stock_rocker/releases/20160523212355/tmp/cache as deploy@139.59.172.2
+ DEBUG [874f85ab] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/deploy/stock_rocker/shared/tmp/cache /home/deploy/stock_rocker/releases/20160523212355/tmp/cache )
+  INFO [874f85ab] Finished in 0.036 seconds with exit status 0 (successful).
+ DEBUG [b356cec5] Running [ -L /home/deploy/stock_rocker/releases/20160523212355/tmp/sockets ] as deploy@139.59.172.2
+ DEBUG [b356cec5] Command: [ -L /home/deploy/stock_rocker/releases/20160523212355/tmp/sockets ]
+ DEBUG [b356cec5] Finished in 0.029 seconds with exit status 1 (failed).
+ DEBUG [23d9f418] Running [ -d /home/deploy/stock_rocker/releases/20160523212355/tmp/sockets ] as deploy@139.59.172.2
+ DEBUG [23d9f418] Command: [ -d /home/deploy/stock_rocker/releases/20160523212355/tmp/sockets ]
+ DEBUG [23d9f418] Finished in 0.034 seconds with exit status 1 (failed).
+  INFO [824e41b2] Running /usr/bin/env ln -s /home/deploy/stock_rocker/shared/tmp/sockets /home/deploy/stock_rocker/releases/20160523212355/tmp/sockets as deploy@139.59.172.2
+ DEBUG [824e41b2] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/deploy/stock_rocker/shared/tmp/sockets /home/deploy/stock_rocker/releases/20160523212355/tmp/sockets )
+  INFO [824e41b2] Finished in 0.031 seconds with exit status 0 (successful).
+ DEBUG [8c3e3d36] Running [ -L /home/deploy/stock_rocker/releases/20160523212355/vendor/bundle ] as deploy@139.59.172.2
+ DEBUG [8c3e3d36] Command: [ -L /home/deploy/stock_rocker/releases/20160523212355/vendor/bundle ]
+ DEBUG [8c3e3d36] Finished in 0.032 seconds with exit status 1 (failed).
+ DEBUG [2d3c13e7] Running [ -d /home/deploy/stock_rocker/releases/20160523212355/vendor/bundle ] as deploy@139.59.172.2
+ DEBUG [2d3c13e7] Command: [ -d /home/deploy/stock_rocker/releases/20160523212355/vendor/bundle ]
+ DEBUG [2d3c13e7] Finished in 0.042 seconds with exit status 1 (failed).
+  INFO [2f695b35] Running /usr/bin/env ln -s /home/deploy/stock_rocker/shared/vendor/bundle /home/deploy/stock_rocker/releases/20160523212355/vendor/bundle as deploy@139.59.172.2
+ DEBUG [2f695b35] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/deploy/stock_rocker/shared/vendor/bundle /home/deploy/stock_rocker/releases/20160523212355/vendor/bundle )
+  INFO [2f695b35] Finished in 0.029 seconds with exit status 0 (successful).
+ DEBUG [9c6f484d] Running [ -L /home/deploy/stock_rocker/releases/20160523212355/public/system ] as deploy@139.59.172.2
+ DEBUG [9c6f484d] Command: [ -L /home/deploy/stock_rocker/releases/20160523212355/public/system ]
+ DEBUG [9c6f484d] Finished in 0.029 seconds with exit status 1 (failed).
+ DEBUG [0134d73e] Running [ -d /home/deploy/stock_rocker/releases/20160523212355/public/system ] as deploy@139.59.172.2
+ DEBUG [0134d73e] Command: [ -d /home/deploy/stock_rocker/releases/20160523212355/public/system ]
+ DEBUG [0134d73e] Finished in 0.030 seconds with exit status 1 (failed).
+  INFO [788da603] Running /usr/bin/env ln -s /home/deploy/stock_rocker/shared/public/system /home/deploy/stock_rocker/releases/20160523212355/public/system as deploy@139.59.172.2
+ DEBUG [788da603] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/deploy/stock_rocker/shared/public/system /home/deploy/stock_rocker/releases/20160523212355/public/system )
+  INFO [788da603] Finished in 0.028 seconds with exit status 0 (successful).
+ DEBUG [de5ba0e7] Running [ -L /home/deploy/stock_rocker/releases/20160523212355/public/assets ] as deploy@139.59.172.2
+ DEBUG [de5ba0e7] Command: [ -L /home/deploy/stock_rocker/releases/20160523212355/public/assets ]
+ DEBUG [de5ba0e7] Finished in 0.026 seconds with exit status 1 (failed).
+ DEBUG [80208d94] Running [ -d /home/deploy/stock_rocker/releases/20160523212355/public/assets ] as deploy@139.59.172.2
+ DEBUG [80208d94] Command: [ -d /home/deploy/stock_rocker/releases/20160523212355/public/assets ]
+ DEBUG [80208d94] Finished in 0.031 seconds with exit status 1 (failed).
+  INFO [adaed3d3] Running /usr/bin/env ln -s /home/deploy/stock_rocker/shared/public/assets /home/deploy/stock_rocker/releases/20160523212355/public/assets as deploy@139.59.172.2
+ DEBUG [adaed3d3] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/deploy/stock_rocker/shared/public/assets /home/deploy/stock_rocker/releases/20160523212355/public/assets )
+  INFO [adaed3d3] Finished in 0.028 seconds with exit status 0 (successful).
+ DEBUG [82f6420b] Running if test ! -d /home/deploy/stock_rocker/releases/20160523212355; then echo "Directory does not exist '/home/deploy/stock_rocker/releases/20160523212355'" 1>&2; false; fi as deploy@139.59.172.2
+ DEBUG [82f6420b] Command: if test ! -d /home/deploy/stock_rocker/releases/20160523212355; then echo "Directory does not exist '/home/deploy/stock_rocker/releases/20160523212355'" 1>&2; false; fi
+ DEBUG [82f6420b] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [7e12d34f] Running $HOME/.rbenv/bin/rbenv exec bundle install --path /home/deploy/stock_rocker/shared/bundle --without development test --deployment --quiet as deploy@139.59.172.2
+ DEBUG [7e12d34f] Command: cd /home/deploy/stock_rocker/releases/20160523212355 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; $HOME/.rbenv/bin/rbenv exec bundle install --path /home/deploy/stock_rocker/shared/bundle --without development test --deployment --quiet )
+  INFO [7e12d34f] Finished in 0.559 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [26747b8c] Running if test ! -d /home/deploy/stock_rocker/releases/20160523212355; then echo "Directory does not exist '/home/deploy/stock_rocker/releases/20160523212355'" 1>&2; false; fi as deploy@139.59.172.2
+ DEBUG [26747b8c] Command: if test ! -d /home/deploy/stock_rocker/releases/20160523212355; then echo "Directory does not exist '/home/deploy/stock_rocker/releases/20160523212355'" 1>&2; false; fi
+ DEBUG [26747b8c] Finished in 0.029 seconds with exit status 0 (successful).
+  INFO [6ccc7bc1] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate as deploy@139.59.172.2
+ DEBUG [6ccc7bc1] Command: cd /home/deploy/stock_rocker/releases/20160523212355 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" RAILS_ENV="production" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate )
+ DEBUG [6ccc7bc1] 	rake aborted!
+ DEBUG [6ccc7bc1] 	ActiveRecord::StatementInvalid: PG::UndefinedTable: ERROR:  relation "blogs" does not exist
+LINE 1: SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" DESC L...
+                               ^
+: SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" DESC LIMIT 1
+ DEBUG [6ccc7bc1] 	/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/postgresql_adapter.rb:592:in `async_exec'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/postgresql_adapter.rb:592:in `block in exec_no_cache'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/abstract_adapter.rb:473:in `block in log'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/abstract_adapter.rb:467:in `log'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/postgresql_adapter.rb:592:in `exec_no_cache'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/postgresql_adapter.rb:584:in `execute_and_clear'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/postgresql/database_statements.rb:160:in `exec_query'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/abstract/database_statements.rb:347:in `select'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/abstract/database_statements.rb:32:in `select_all'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:70:in `select_all'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/querying.rb:39:in `find_by_sql'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/relation.rb:638:in `exec_queries'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/relation.rb:514:in `load'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/relation.rb:243:in `to_a'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/relation/finder_methods.rb:523:in `find_last'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/relation/finder_methods.rb:172:in `last'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/querying.rb:3:in `last'
+/home/deploy/stock_rocker/releases/20160523212355/config/routes.rb:5:in `block in <top (required)>'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/routing/route_set.rb:432:in `instance_exec'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/routing/route_set.rb:432:in `eval_block'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/routing/route_set.rb:410:in `draw'
+/home/deploy/stock_rocker/releases/20160523212355/config/routes.rb:1:in `<top (required)>'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:268:in `load'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:268:in `block in load'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:240:in `load_dependency'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:268:in `load'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/routes_reloader.rb:40:in `each'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/routes_reloader.rb:16:in `reload!'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/file_update_checker.rb:75:in `execute'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/routes_reloader.rb:27:in `updater'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/finisher.rb:69:in `block in <module:Finisher>'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/initializable.rb:30:in `instance_exec'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/initializable.rb:30:in `run'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/initializable.rb:55:in `block in run_initializers'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/initializable.rb:54:in `run_initializers'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application.rb:352:in `initialize!'
+/home/deploy/stock_rocker/releases/20160523212355/config/environment.rb:5:in `<top (required)>'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:274:in `require'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:274:in `block in require'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:240:in `load_dependency'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:274:in `require'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application.rb:328:in `require_environment!'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application.rb:457:in `block in run_tasks_blocks'
+/home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `load'
+/home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
+ DEBUG [6ccc7bc1] 	PG::UndefinedTable: ERROR:  relation "blogs" does not exist
+LINE 1: SELECT  "blogs".* FROM "blogs"  ORDER BY "blogs"."id" DESC L...
+                               ^
+ DEBUG [6ccc7bc1] 	/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/postgresql_adapter.rb:592:in `async_exec'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/postgresql_adapter.rb:592:in `block in exec_no_cache'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/abstract_adapter.rb:473:in `block in log'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/abstract_adapter.rb:467:in `log'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/postgresql_adapter.rb:592:in `exec_no_cache'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/postgresql_adapter.rb:584:in `execute_and_clear'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/postgresql/database_statements.rb:160:in `exec_query'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/abstract/database_statements.rb:347:in `select'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/abstract/database_statements.rb:32:in `select_all'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:70:in `select_all'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/querying.rb:39:in `find_by_sql'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/relation.rb:638:in `exec_queries'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/relation.rb:514:in `load'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/relation.rb:243:in `to_a'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/relation/finder_methods.rb:523:in `find_last'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/relation/finder_methods.rb:172:in `last'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activerecord-4.2.2/lib/active_record/querying.rb:3:in `last'
+/home/deploy/stock_rocker/releases/20160523212355/config/routes.rb:5:in `block in <top (required)>'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/routing/route_set.rb:432:in `instance_exec'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/routing/route_set.rb:432:in `eval_block'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/routing/route_set.rb:410:in `draw'
+/home/deploy/stock_rocker/releases/20160523212355/config/routes.rb:1:in `<top (required)>'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:268:in `load'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:268:in `block in load'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:240:in `load_dependency'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:268:in `load'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/routes_reloader.rb:40:in `each'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/routes_reloader.rb:16:in `reload!'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/file_update_checker.rb:75:in `execute'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/routes_reloader.rb:27:in `updater'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application/finisher.rb:69:in `block in <module:Finisher>'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/initializable.rb:30:in `instance_exec'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/initializable.rb:30:in `run'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/initializable.rb:55:in `block in run_initializers'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/initializable.rb:54:in `run_initializers'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application.rb:352:in `initialize!'
+/home/deploy/stock_rocker/releases/20160523212355/config/environment.rb:5:in `<top (required)>'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:274:in `require'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:274:in `block in require'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:240:in `load_dependency'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb:274:in `require'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application.rb:328:in `require_environment!'
+/home/deploy/stock_rocker/shared/bundle/ruby/2.3.0/gems/railties-4.2.2/lib/rails/application.rb:457:in `block in run_tasks_blocks'
+/home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `load'
+/home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
+ DEBUG [6ccc7bc1] 	Tasks: TOP => db:migrate => environment
+ DEBUG [6ccc7bc1] 	(See full trace by running task with --trace)

@@ -1,6 +1,7 @@
 # config valid only for Capistrano 3.4.1
 lock '3.4.1'
 
+
 set :application, 'stock_rocker'
 set :repo_url, 'git@github.com:reesy121/stock-rocker.git'
 
@@ -9,6 +10,8 @@ set :repo_url, 'git@github.com:reesy121/stock-rocker.git'
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/deploy/stock_rocker/'
+
+set :deploy_via, :remote_cache
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -45,6 +48,7 @@ namespace :deploy do
   end
 
   after :publishing, :restart
+  before  'deploy:assets:precompile', 'deploy:migrate'
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -54,5 +58,16 @@ namespace :deploy do
        end
     end
   end
+
+  desc "Check that we can access everything"
+  task :check_write_permissions do
+  on roles(:all) do |host|
+    if test("[ -w #{fetch(:deploy_to)} ]")
+      info "#{fetch(:deploy_to)} is writable on #{host}"
+    else
+      error "#{fetch(:deploy_to)} is not writable on #{host}"
+    end
+  end
+end
 
 end
