@@ -47,6 +47,11 @@ namespace :deploy do
     end
   end
 
+  desc "reload the database with seed data"
+  task :seed do
+    run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{fetch(:stage)}"
+  end
+
   after :publishing, :restart
   before  'deploy:assets:precompile', 'deploy:migrate'
 
