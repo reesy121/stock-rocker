@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   mount Ckeditor::Engine => '/ckeditor'
-  root 'blogs#show', id: Blog.last.id
-  #root 'static_pages#about'
+  #root 'blogs#show', id: Blog.last.id
+  root 'static_pages#about'
 
   get 'about'     =>  'static_pages#about'
   get 'contact'   =>  'contacts#new'
