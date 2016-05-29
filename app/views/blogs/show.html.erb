@@ -8,7 +8,7 @@
 				<% if current_user %>
 					<%= render 'comments/new' %>
 				<% else %>
-					<%= link_to("Please login to comment", new_user_session_path) %>
+					<%= link_to(content_tag(:h4, "Please login to comment"), new_user_session_path) %>
 				<% end %>
 			</section>
 		</div>

@@ -1,7 +1,7 @@
 <h1><%= @blog.title %></h1>
 <h3 class="center"><%= @blog.sub_title %></h3>
 <h2>Posted on <%= @blog.created_at.to_formatted_s(:long_ordinal) unless @blog.created_at.nil? %> by
-	<%= @blog.user.first_name %> <%= @blog.user.last_name %>
+	<%= @blog.user.first_name %> <%= @blog.user.last_name %> (<%= pluralize(@blog.unique_views , "View") %>)
 </h2>
 <div class="col-md-10 col-md-offset-1">
 	<div class="well bs-component">

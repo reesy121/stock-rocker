@@ -1,4 +1,5 @@
 class Blog < ActiveRecord::Base
+	is_impressionable
 	belongs_to :user
 	#
 	has_many :posts, dependent: :destroy, inverse_of: :blog
@@ -16,4 +17,7 @@ class Blog < ActiveRecord::Base
 	validates :tags, presence: true,  length: { maximum: 120, minimum: 4 }
 	validates :posts, presence: true
 	
+	def unique_views
+		impressionist_count(:filter=>:ip_address)
+	end
 end

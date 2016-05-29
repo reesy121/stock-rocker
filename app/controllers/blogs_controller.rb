@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   include BlogsHelper
 
+  impressionist :actions=>[:show]
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :confirm_user, except: [:index, :show]
 
