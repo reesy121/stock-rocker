@@ -33,16 +33,34 @@ def comment_attributes(overrides = {})
   }.merge(overrides)
 end
 #
-def impressionist_attributes(overrider = {})
+def impressionist_attributes(overrides = {})
   {
-    impressionable_type: "request", 
+    impressionable_type: "Blog", 
     impressionable_id: 1, 
-    controller_name: "blog", 
+    controller_name: "blogs", 
     action_name: "show", 
-    user_id: 1, 
-    request_hash: "", 
-    session_hash: "", 
+    user_id: "", 
+    request_hash: "a1bf7299b3bfbc4d32838167864207d0332a7b8c622e868684...", 
+    session_hash: "774accc9afee5b77301c87d5aabb2174", 
     ip_address: "32.56.43.63", 
     referrer: ""
-  }
+  }.merge(overrides)
+end
+#
+def user_attributes(overrides = {})
+  {
+    first_name: "Test", 
+    last_name: "RSPEC TEST", 
+    email: "testtest@rspec.com", 
+    password: "testing123", 
+    password_confirmation: "testing123", 
+    reset_password_token: nil, 
+    reset_password_sent_at: nil, 
+    remember_created_at: nil, 
+    sign_in_count: 1, 
+    current_sign_in_at: "2015-02-06 14:02:10", 
+    last_sign_in_at: "2015-02-06 14:02:10", 
+    current_sign_in_ip: "127.0.0.1", 
+    last_sign_in_ip: "127.0.0.1"
+  }.merge(overrides)
 end

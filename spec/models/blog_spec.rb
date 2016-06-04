@@ -145,8 +145,9 @@ RSpec.describe Blog, type: :model do
 		}.to change(Category, :count).by(1)
 	end
 
-	it "unique views measures by unique IP address" #do Finnish
-		#@blog = Blog.create(blog_attributes)
-
-	#end
+	it "Blog views measured by unique IP address" do
+		@blog = Blog.create(blog_attributes)
+		3.times { Impression.create(impressionist_attributes( { impressionable_id: @blog.id } ) ) }
+		expect(@blog.unique_views).to eq(1)
+	end
 end
