@@ -64,3 +64,18 @@ def user_attributes(overrides = {})
     last_sign_in_ip: "127.0.0.1"
   }.merge(overrides)
 end
+#
+def categorization_attributes(overrides = {})
+  {
+    category_id: 1,
+    blog_id: 1
+    }.merge(overrides)
+end
+#
+def contact_attributes(overrides = {})
+  {
+    name: "David Testy Test",
+    message: "a" * 200,
+    email: "admin@reesy121.co.uk"
+    }.merge(overrides)
+end

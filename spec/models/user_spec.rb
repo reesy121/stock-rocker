@@ -25,9 +25,22 @@ RSpec.describe User, type: :model do
   	expect(@user.errors[:email].any?).to eq(true)
   end
 
-  it "email must be unique"
+  it "email must be unique" do
+    @user = User.create(user_attributes)
+    @user = User.new(user_attributes)
 
-  it "passwords must match"
+    @user.valid?
+
+    expect(@user.errors[:email].any?).to eq(true)
+  end
+
+  it "passwords must match" do
+    @user = User.new(user_attributes({ password_confirmation: "notthesamepassword"}) )
+
+    @user.valid?
+
+    expect(@user.errors[:password_confirmation].any?).to eq(true)
+  end
 
   it "full name method collates first and last name" do
   	@user = User.create(user_attributes)
@@ -35,8 +48,24 @@ RSpec.describe User, type: :model do
   	expect(@user.full_name).to eq(@user.first_name + ' ' + @user.last_name)
   end
 
-  it "deleting user deletes linked commemts"
+  it "deleting user deletes linked commemts" do
+    @user = User.create(user_attributes)
+    @blog = Blog.create(blog_attributes({ user_id: @user.id }))
+    @blog.comments.create(comment_attributes({ user_id: @user.id  }))
 
-  it  "deleting user deletes linked blogs"
+    expect {
+        @user.destroy
+      }.to change(Comment, :count).by(-1)
+
+  end
+
+  it  "deleting user deletes linked blogs" do
+    @user = User.create(user_attributes)
+    @blog = Blog.create(blog_attributes({ user_id: @user.id }))
+
+    expect {
+        @user.destroy
+      }.to change(Blog, :count).by(-1)
+  end
 
 end
