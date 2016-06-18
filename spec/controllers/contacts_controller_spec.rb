@@ -2,23 +2,16 @@ require 'rails_helper'
 
 RSpec.describe ContactsController, type: :controller do
 
-  describe "GET #controller" do
-    it "returns http success" do
-      get :controller
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET #new" do
+   describe "GET #new" do
     it "returns http success" do
       get :new
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #create" do
+  describe "POST #create" do
     it "returns http success" do
-      get :create
+      post :create, {:contact => contact_attributes}
       expect(response).to have_http_status(:success)
     end
   end
