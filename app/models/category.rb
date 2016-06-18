@@ -6,7 +6,11 @@ class Category < ActiveRecord::Base
     validates :name, presence: true, length: { maximum: 55 }, uniqueness: { case_sensitive: false }
 
     def self.has_blogs
-  	 	all.joins(:categorizations).order('name ASC')
+      subselect = "select distinct
+                    category_id
+                  from
+                    categorizations"
+      where("id IN (#{subselect})").order('name ASC')
   	end
 
   	def capitalize_name
