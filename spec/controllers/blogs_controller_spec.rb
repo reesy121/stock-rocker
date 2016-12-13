@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe BlogsController, type: :controller do
 
- describe "Blogs Controller" do
+  describe "No logged in user" do
 
     it "GET index returns http success" do
       get :index
@@ -40,7 +40,20 @@ RSpec.describe BlogsController, type: :controller do
 
     it "DELETE redirects when not logged in"
 
+  end
 
- end
+    #it "POST comments redirects when not logged in" #Not valid?
+
+
+    describe "Login normal user" do
+      #Create login functionality with devise using 
+      #https://github.com/plataformatec/devise/wiki/How-To:-Test-controllers-with-Rails-3-and-4-(and-RSpec)
+    end
+
+    describe "Login admin user" do
+
+
+    end
+
 
 end
