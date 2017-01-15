@@ -1,9 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  context "Post Validation" do
-   	before :all do
-   		 @post = Post.new({ content: "a" * 19 })
+
+  context "validation" do
+
+   	before do
+   		@post = Post.new({ content: "a" * 19 })
   	end
 
    	it "content has to be minimum of 20 characters" do
