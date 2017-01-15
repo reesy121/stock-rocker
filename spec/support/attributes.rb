@@ -50,7 +50,7 @@ end
 def user_attributes(overrides = {})
   {
     first_name: "Test", 
-    last_name: "RSPEC TEST", 
+    last_name: "Rspec", 
     email: "testtest@rspec.com", 
     password: "testing123", 
     password_confirmation: "testing123", 
