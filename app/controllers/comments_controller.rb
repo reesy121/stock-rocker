@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 			flash[:notice] = "Your comment was successfully created"
 			redirect_to @blog
 		else
-			flash[:danger] = "Your comment couldn't be created, limit of 255 chars"
+			flash[:danger] = "Your comment couldn't be created."
 			@comments = @blog.comments.order_all
 			render "blogs/show" #try and render so fake data is still in there?
 		end

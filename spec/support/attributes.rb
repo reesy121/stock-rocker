@@ -57,7 +57,7 @@ def user_attributes(overrides = {})
     reset_password_token: nil, 
     reset_password_sent_at: nil, 
     remember_created_at: nil, 
-    sign_in_count: 1, 
+    sign_in_count: 0, 
     current_sign_in_at: "2015-02-06 14:02:10", 
     last_sign_in_at: "2015-02-06 14:02:10", 
     current_sign_in_ip: "127.0.0.1", 
@@ -70,6 +70,12 @@ def categorization_attributes(overrides = {})
     category_id: 1,
     blog_id: 1
     }.merge(overrides)
+end
+def category_attributes(overrides= {})
+  {
+    name: "Action"
+  }
+  
 end
 #
 def contact_attributes(overrides = {})

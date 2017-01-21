@@ -58,6 +58,12 @@ RSpec.describe User, type: :model do
     end
   end
 
+  it "admin defaults to false" do
+    user = User.create!(user_attributes)
+
+    expect(user.admin).to eq(false)
+  end
+
   it "requires a password" do
     user = User.new(password: "")
 
@@ -137,16 +143,12 @@ describe "authenticate" do
     @user = User.create!(user_attributes)
   end
 
-  it "returns non-true value if the email does not match" do
-    expect(User.authenticate("nomatch", @user.password)).not_to eq(true)
+  it 'accepts correct password' do
+    expect(@user.valid_password?(@user.password)).to eq(true)
   end
 
-  it "returns non-true value if the password does not match" do
-    expect(User.authenticate(@user.email, "nomatch")).not_to eq(true)
-  end
-
-  it "returns the user if the email and password match" do
-    expect(User.authenticate(@user.email, @user.password)).to eq(@user)
-  end
+  #it 'accepts correct email' do
+  #  expect(@user.valid_email?(@user.email)).to eq(true)
+  #end
 
 end

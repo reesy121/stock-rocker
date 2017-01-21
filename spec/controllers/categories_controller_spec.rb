@@ -1,15 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe CategoriesController, type: :controller do
-	describe "Category Controller" do
-    it "GET index returns http success" do
+
+    before do
+      @category = Category.create!(category_attributes)
+    end
+
+    it "index returns http success" do
       get :index
       expect(response).to have_http_status(:success)
     end
 
-    it "GET show returns http success" do
-      get :show,  {id: 1 }
+    it "show returns http success" do
+      get :show,  { id: @category }
       expect(response).to have_http_status(:success)
     end
-  end
 end

@@ -5,32 +5,23 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :confirm_user, except: [:index, :show]
 
-  # GET /blogs
-  # GET /blogs.json
   def index
     @blogs = Blog.all
   end
 
-  # GET /blogs/1
-  # GET /blogs/1.json
   def show
     @comments = @blog.comments.order_all
   end
 
-  # GET /blogs/new
   def new
     @blog = Blog.new
     # Only build on new and invalid
     @blog.posts.build && @blog.categorizations.build unless performed?
   end
 
-  # GET /blogs/1/edit
   def edit
-
   end
 
-  # blog /blogs
-  # blog /blogs.json
   def create
     @blog = current_user.blogs.new(blog_params)
 
@@ -48,8 +39,6 @@ class BlogsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /blogs/1
-  # PATCH/PUT /blogs/1.json
   def update
     respond_to do |format|
       if (preview_button? && @blog.valid?)
@@ -67,8 +56,6 @@ class BlogsController < ApplicationController
     end
   end
 
-  # DELETE /blogs/1
-  # DELETE /blogs/1.json
   def destroy
     @blog.destroy
     respond_to do |format|

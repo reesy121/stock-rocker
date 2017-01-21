@@ -2,58 +2,44 @@ require 'rails_helper'
 
 RSpec.describe BlogsController, type: :controller do
 
-  describe "No logged in user" do
-
-    it "GET index returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
-    end
-
-    it "GET show returns http success" do
-      blog = Blog.create(blog_attributes)
-      get :show, { id: blog.id }
-      expect(response).to have_http_status(:success)
-    end
-
-    it "POST new redirect when not logged in" do
-      blog = Blog.create(blog_attributes)
-      post :new#, blog 
-      expect(response).to redirect_to new_user_registration_path
-    end
-
-    it "POST new redirect when not logged in" do
-      get :new
-      expect(response).to redirect_to new_user_registration_path
-    end
-
-    it "GET edit redirects when not logged in" do
-      blog = Blog.create(blog_attributes)
-      get :edit, { id: blog.id }
-      expect(response).to redirect_to new_user_registration_path
-    end
-
-    it "POST edit redirects when not logged in" do
-      blog = Blog.create(blog_attributes)
-      patch :edit, { id: blog.id }
-      expect(response).to redirect_to new_user_registration_path
-    end
-
-    it "DELETE redirects when not logged in"
-
+  before do
+    @user = User.create!(user_attributes)
+    @blog = Blog.create!(blog_attributes(user_id: @user.id))
   end
 
-    #it "POST comments redirects when not logged in" #Not valid?
+ context "when not signed in" do
+
+  it "cannot access new" do
+    get :new
+
+    expect(response).to redirect_to(new_user_registration_url)
+  end
+
+  it "cannot access create" do
+    post :create
+
+    expect(response).to redirect_to(new_user_registration_url)
+  end
+
+  it "cannot access edit" do
+    get :edit, id: @blog
+
+    expect(response).to redirect_to(new_user_registration_url)
+  end
+
+  it "cannot access update" do
+    patch :update, id: @blog
+
+    expect(response).to redirect_to(new_user_registration_url)
+  end
+
+  it "cannot access destroy" do
+     delete :destroy, id: @blog
+
+     expect(response).to redirect_to(new_user_registration_url)
+  end
 
 
-    describe "Login normal user" do
-      #Create login functionality with devise using 
-      #https://github.com/plataformatec/devise/wiki/How-To:-Test-controllers-with-Rails-3-and-4-(and-RSpec)
-    end
-
-    describe "Login admin user" do
-
-
-    end
-
+ end
 
 end
