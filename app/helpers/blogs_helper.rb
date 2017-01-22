@@ -17,4 +17,5 @@ module BlogsHelper
 	def users_blog?(blog)
 		current_user.id == blog.user_id rescue false
 	end
+	
 end

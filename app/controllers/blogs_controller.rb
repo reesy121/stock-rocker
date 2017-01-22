@@ -3,7 +3,8 @@ class BlogsController < ApplicationController
 
   impressionist :actions=>[:show]
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_action :confirm_user, except: [:index, :show]
+  before_action :require_signin, except: [:index, :show]
+  before_action :require_admin, except: [:index, :show]
 
   def index
     @blogs = Blog.all

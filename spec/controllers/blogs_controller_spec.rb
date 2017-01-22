@@ -38,8 +38,43 @@ RSpec.describe BlogsController, type: :controller do
 
      expect(response).to redirect_to(new_user_registration_url)
   end
-
-
  end
 
+ context "when signed as normal user" do
+
+  before do
+    sign_in @user
+  end
+
+  it "cannot access new" do
+    get :new
+
+    expect(response).to redirect_to(root_url)
+  end
+
+  it "cannot access create" do
+    post :create
+
+    expect(response).to redirect_to(root_url)
+  end
+
+  it "cannot access edit" do
+    get :edit, id: @blog
+
+    expect(response).to redirect_to(root_url)
+  end
+
+  it "cannot access update" do
+    patch :update, id: @blog
+
+    expect(response).to redirect_to(root_url)
+  end
+
+  it "cannot access destroy" do
+     delete :destroy, id: @blog
+
+     expect(response).to redirect_to(root_url)
+  end
+
+ end
 end
