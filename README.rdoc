@@ -1,7 +1,12 @@
 == Stock Rocker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A self made blogging site in rails. 
+
+To do list:
+
+* Complete test suite (controller, features tests).
+
+* Plenty more, fill in here.
 
 Things you may want to cover:
 
