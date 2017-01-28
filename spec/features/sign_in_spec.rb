@@ -52,6 +52,6 @@ describe "Signing in" do
     expect(page).to have_link('Login')
   end
 
-  it "redirects to the intended page"
+  #it "redirects to the intended page" # Put in later?
 
 end
