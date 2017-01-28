@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
 
   validates :first_name, :last_name, presence: true 
-  validates :password, length: { minimum: 8 }
+  validates :password, length: { minimum: 8, allow_blank: true  }
 
   def full_name
   	first_name + ' ' + last_name
