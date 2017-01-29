@@ -29,8 +29,10 @@ describe "Signing in" do
 
     expect(page).to have_link("Your User")
     expect(page).to have_link("Logout")
+    expect(page).to have_link("Blogs")
 
     expect(page).not_to have_link('Sign In')
+    expect(page).not_to have_link('Categories')
   end
 
   it "invalid combination does not sign in user" do
