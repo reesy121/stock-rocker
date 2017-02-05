@@ -6,7 +6,7 @@ To do list:
 
 * Complete test suite (controller, features tests).
 
-* Plenty more, fill in here.
+* Find a way to take the last matching element "Insert New Category".
 
 Things you may want to cover:
 

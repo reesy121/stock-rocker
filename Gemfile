@@ -29,8 +29,10 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-# Measure Blogs Viewa
-gem 'impressionist'
+# Measure Blogs Views 
+# Version 1.5.2 bugs out see https://github.com/charlotte-ruby/impressionist/issues/220
+# Can fix but for now just go back to 1.5.1
+gem 'impressionist', '1.5.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -56,6 +58,7 @@ end
 group :test do
 	gem 'factory_girl_rails'
 	gem 'shoulda-matchers'
+  gem 'database_cleaner'
 end
 
 group :development, :test do
@@ -63,6 +66,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'launchy'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

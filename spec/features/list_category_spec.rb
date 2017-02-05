@@ -12,7 +12,7 @@ describe "Viewing categories" do
 
 		expect(page).to have_text(category.name)
 		expect(page).to have_text("1 Blog")
-		expect(page).to have_title("#{category.name} | Stock Rocker Blog")
+		expect(page).to have_title("Categories | Stock Rocker Blog")
 	end
 
 	it "does not show category without associated blog" do

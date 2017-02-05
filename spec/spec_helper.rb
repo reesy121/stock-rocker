@@ -17,7 +17,9 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'capybara/rspec'
+require 'capybara/webkit'
 require 'support/controller_helpers'
+Capybara.javascript_driver = :webkit
 #require 'factory_girl_rails'
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -43,6 +45,14 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
   #config.include FactoryGirl::Syntax::Methods
+  Capybara::Webkit.configure do |config|
+  # Enable debug mode. Prints a log of everything the driver is doing.
+    config.debug = false
+    config.allow_url("svc.webspellchecker.net")
+    config.allow_url("www.stockrocker.co.uk")
+    config.allow_url("www.google-analytics.com")
+
+  end
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
@@ -94,3 +104,4 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
