@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   include BlogsHelper
 
-  impressionist :actions=>[:show]
+  impressionist :actions => [:show]
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :require_signin, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
@@ -51,7 +51,7 @@ class BlogsController < ApplicationController
         format.json { render :show, status: :ok, location: @blog }
        else
         clear_preview_button
-        format.html { render :new }
+        format.html { render :edit }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end

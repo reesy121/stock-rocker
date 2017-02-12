@@ -18,10 +18,14 @@ class CommentsController < ApplicationController
 
 	def destroy
 		@comment = Comment.find(params[:id])
-		@comment.destroy if @comment.user == current_user
-
-		flash[:notice] = "Your comment was deleted! Hope it wasn't naughty"
-		redirect_to @comment.blog
+		if @comment.user == current_user
+			@comment.destroy
+			flash[:notice] = "Your comment was successfully deleted!"
+			redirect_to @comment.blog
+		else
+			flash[:danger] = "You can't delete other users comments"
+			redirect_to @comment.blog
+		end
 	end
 
   private
