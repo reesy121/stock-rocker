@@ -9,9 +9,9 @@ class ContactsController < ApplicationController
     
     if @contact.valid?
       ContactMailer.contact(@contact).deliver_now
-      redirect_to contact_path, notice: "Thanks, your message has been sent"
+      redirect_to root_path, notice: "Thanks, your message has been sent"
     else
-      #flash.now[:alert] = "Sorry we couldn't send your message"
+      flash.now[:alert] = "Sorry we couldn't send your message"
       render :new
     end
   end

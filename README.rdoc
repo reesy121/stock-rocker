@@ -4,7 +4,11 @@ A self made blogging site in rails.
 
 To do list:
 
-* Complete test suite (controller, features tests).
+* Find out how to recieve messages from mailgun, finnish email test
+
+* Put email go live, hopefully it works
+
+* 
 
 * Find a way to take the last matching element "Insert New Category".
 

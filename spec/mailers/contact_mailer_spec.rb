@@ -1,5 +1,24 @@
 require "rails_helper"
 
-RSpec.describe ContactMailer, type: :mailer do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe "Contact mailer sending an email" do
+  
+	before do
+		@contact = Contact.new(contact_attributes)
+		@mail = ContactMailer.contact(@contact).deliver_now
+	end
+
+	it 'renders the subject' do
+      expect(@mail.subject).to eq("Contact Us Message from #{@contact.name}")
+    end
+
+   it 'renders the receiver email' do
+      expect(@mail.to).to eq(["reesy121@hotmail.co.uk"]) #change me?
+   end
+
+   it 'renders the sender email' do
+     expect(@mail.from).to eq([@contact.email])
+   end
+
+   #it "renders the body"
+
 end

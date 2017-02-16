@@ -1,7 +1,7 @@
 class ContactMailer < ApplicationMailer
 
+	#default to: "admin@stockrocker.co.uk"
 	default to: "reesy121@hotmail.co.uk"
-	default from: "Your Mailer <noreply@yourdomain.com>"
 
 	def contact(contact)
 		@contact = contact

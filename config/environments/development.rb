@@ -33,13 +33,16 @@ Rails.application.configure do
   config.assets.digest = true
 
   # Configure email for Dev
-  config.action_mailer.smtp_settings = {
-      :address              => "smtp.gmail.com",
-      :port                 => 587,
-      :user_name            => ENV['GMAIL_USERNAME'],
-      :password             => ENV['GMAIL_PASSWORD'],
-      :authentication       => :plain,
-      :enable_starttls_auto => true
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for mailgun
+  ActionMailer::Base.smtp_settings = {
+    :port           => 587,
+    :address        => "smtp.mailgun.org",
+    #:domain         => ENV['domain'],
+    :user_name      => ENV['MG_USERNAME'],
+    :password       => ENV['MG_PASSWORD'],
+    :authentication => :plain,
+    :enable_starttls_auto => true
   }
 
   # Adds additional error checking when serving assets at runtime.

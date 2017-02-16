@@ -72,5 +72,5 @@ RSpec.describe Contact, type: :model do
 
   	expect(@contact.errors[:email].any?).to eq(true)
   end
-
+S
 end
