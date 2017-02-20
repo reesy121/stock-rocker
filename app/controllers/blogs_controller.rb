@@ -25,44 +25,31 @@ class BlogsController < ApplicationController
 
   def create
     @blog = current_user.blogs.new(blog_params)
-
-    respond_to do |format|
       if (preview_button? && @blog.valid?)
-        format.html { render :new }
+        render :new
       elsif @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        format.json { render :show, status: :created, location: @blog }
+        redirect_to @blog, notice: 'Blog was successfully created.'
       else
         clear_preview_button
-        format.html { render :new }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
 
   def update
-    respond_to do |format|
       if (preview_button? && @blog.valid?)
         @blog.assign_attributes(blog_params)
-        format.html { render :edit }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
+        render :edit
        elsif @blog.update(blog_params)
-        format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
-        format.json { render :show, status: :ok, location: @blog }
+        redirect_to @blog, notice: 'Blog was successfully updated.'
        else
         clear_preview_button
-        format.html { render :edit }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
+        render :edit
       end
-    end
   end
 
   def destroy
     @blog.destroy
-    respond_to do |format|
-      format.html { redirect_to blogs_url, notice: 'Blog was successfully deleted.' }
-      format.json { head :no_content }
-    end
+    redirect_to blogs_url, notice: 'Blog was successfully deleted.'
   end
 
   private

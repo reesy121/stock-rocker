@@ -36,12 +36,12 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for mailgun
   ActionMailer::Base.smtp_settings = {
-    :port           => 587,
-    :address        => "smtp.mailgun.org",
-    #:domain         => ENV['domain'],
-    :user_name      => ENV['MG_USERNAME'],
-    :password       => ENV['MG_PASSWORD'],
-    :authentication => :plain,
+    address:              'auth.smtp.1and1.co.uk',
+    domain:               '1and1.com',
+    port:                 587,  
+    authentication:       'login',
+    user_name:            'admin@stockrocker.co.uk',
+    password:             'ooohmelikey121',
     :enable_starttls_auto => true
   }
 

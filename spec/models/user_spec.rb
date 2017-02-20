@@ -135,6 +135,14 @@ RSpec.describe User, type: :model do
       }.to change(Blog, :count).by(-1)
   end
 
+  it "all except returns all users bar the current user" do
+    current_user = User.create!(user_attributes)
+    user = User.create!(user_attributes(email: "drees44@hotmail.com"))
+    user1 = User.create!(user_attributes(email: "donedirtcheap@deeds.com"))
+    expect(User.all_except(current_user)).not_to include(current_user) 
+     expect(User.all_except(current_user)).to include(user) 
+  end
+
 end
 
 describe "authenticate" do

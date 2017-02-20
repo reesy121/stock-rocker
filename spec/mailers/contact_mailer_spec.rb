@@ -12,7 +12,7 @@ describe "Contact mailer sending an email" do
     end
 
    it 'renders the receiver email' do
-      expect(@mail.to).to eq(["reesy121@hotmail.co.uk"]) #change me?
+      expect(@mail.to).to eq(["admin@stockrocker.co.uk"]) #change me?
    end
 
    it 'renders the sender email' do

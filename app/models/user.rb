@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, presence: true 
   validates :password, length: { minimum: 8, allow_blank: true  }
 
+  scope :all_except, ->(user) { where.not(id: user) }
+
   def full_name
   	first_name + ' ' + last_name
   end
