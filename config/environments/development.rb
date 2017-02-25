@@ -34,16 +34,16 @@ Rails.application.configure do
 
   # Configure email for Dev
   config.action_mailer.delivery_method = :smtp
-  # SMTP settings for mailgun
+  # SMTP settings 
   ActionMailer::Base.smtp_settings = {
     address:              'auth.smtp.1and1.co.uk',
-    domain:               '1and1.com',
     port:                 587,  
     authentication:       'login',
     user_name:            'admin@stockrocker.co.uk',
-    password:             'ooohmelikey121',
+    password:             ENV['PASSWORD_11'],
     :enable_starttls_auto => true
   }
+  Rails.application.routes.default_url_options[:host] = 'localhost'
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.

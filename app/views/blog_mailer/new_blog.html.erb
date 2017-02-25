@@ -1,0 +1,12 @@
+<h1>There's a new blog, read it in man!!!</h1>
+
+<p>
+	Hello there <%= @user.first_name %>,
+</p>
+<p>
+  <%= @blog.user.full_name %> has posted a new blog! Click <%= link_to('here', blog_url(@blog)) %>
+  to view it.
+</p>
+<p>
+	Thanks for your continued support.
+</p>

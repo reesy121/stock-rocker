@@ -3,8 +3,21 @@ require "rails_helper"
 describe "Blog mailer sending an email" do
   
 	before do
-		@contact = Contact.new(contact_attributes)
-		@mail = ContactMailer.contact(@contact).deliver_now
+	  @user = User.create!(user_attributes)
+	  @blog = Blog.create!(blog_attributes(user_id: @user.id))
+	  @mail = BlogMailer.new_blog(@user, @blog).deliver_now
 	end
+
+	it 'renders the subject' do
+	  expect(@mail.subject).to eq("New blog: #{@blog.title}")
+	end
+
+	it 'renders the receiver email' do
+      expect(@mail.to).to eq([@user.email]) #change me?
+    end
+
+    it 'renders the sender email' do
+     expect(@mail.from).to eq(["admin@stockrocker.co.uk"])
+    end
 
 end
