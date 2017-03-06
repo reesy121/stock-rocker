@@ -36,14 +36,17 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   # SMTP settings 
   ActionMailer::Base.smtp_settings = {
-    address:              'auth.smtp.1and1.co.uk',
-    port:                 587,  
-    authentication:       'login',
-    user_name:            'admin@stockrocker.co.uk',
-    password:             ENV['PASSWORD_11'],
-    :enable_starttls_auto => true
+    address:              "smtp.zoho.com", 
+    port:                 465,                 
+    user_name:            'life.admin@stockrocker.co.uk',
+    domain:               'stockrocker.co.uk',
+    password:             ENV['PASSWORD_11'],        
+    authentication:       :login,
+    ssl:                  true,
+    tls:                  true,
+    enable_starttls_auto: true    
   }
-  Rails.application.routes.default_url_options[:host] = 'localhost'
+  Rails.application.routes.default_url_options[:host] = 'localhost:3000'
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.

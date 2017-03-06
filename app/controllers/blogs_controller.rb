@@ -28,6 +28,10 @@ class BlogsController < ApplicationController
       if (preview_button? && @blog.valid?)
         render :new
       elsif @blog.save
+        User.all_except(current_user).each do |u| 
+          BlogMailer.new_blog(u, @blog).deliver_now
+        end
+        # Extract into method, write test for this!
         redirect_to @blog, notice: 'Blog was successfully created.'
       else
         clear_preview_button

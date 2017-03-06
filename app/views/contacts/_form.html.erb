@@ -1,7 +1,7 @@
 <%=form_for @contact, url: contact_path do |f| %>
 	<%= render 'shared/error_messages', object: f.object %>
 		<%= f.label :name %>
-		<%= f.text_field :name, class: ' text-name form-control', placeholder: "Your name" %>
+		<%= f.text_field :name, class: 'text-name form-control', placeholder: "Your name" %>
 	
 		<%= f.label :email %>
 		<%= f.email_field :email, class: 'text-email form-control', placeholder: "Your Email" %>

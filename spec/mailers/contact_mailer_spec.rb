@@ -12,11 +12,11 @@ describe "Contact mailer sending an email" do
   end
 
   it 'renders the receiver email' do
-      expect(@mail.to).to eq(["admin@stockrocker.co.uk"]) #change me?
+      expect(@mail.to).to eq(["life.admin@stockrocker.co.uk"]) #change me?
   end
 
   it 'renders the sender email' do
-   expect(@mail.from).to eq([@contact.email])
+   expect(@mail.from).to eq(["life.admin@stockrocker.co.uk"])   #eq([@contact.email])
   end
 
    #it "renders the body"

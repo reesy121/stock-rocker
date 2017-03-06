@@ -4,11 +4,11 @@ A self made blogging site in rails.
 
 To do list:
 
-* Find out how to recieve messages from mailgun, finnish email test
+* Look into other mail options! and check new blog email
 
-* Put email go live, hopefully it works
+* Clean up devise forms check new registrations
 
-* 
+* Root page is blog exists last value if not somewhere else
 
 * Find a way to take the last matching element "Insert New Category".
 

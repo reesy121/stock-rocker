@@ -1,6 +1,6 @@
 class BlogMailer < ApplicationMailer
 
-	default from: "admin@stockrocker.co.uk"
+	default from: "life.admin@stockrocker.co.uk"
 
 	def new_blog(user, blog)
 	  @user = user

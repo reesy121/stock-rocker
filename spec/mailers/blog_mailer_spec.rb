@@ -13,11 +13,11 @@ describe "Blog mailer sending an email" do
 	end
 
 	it 'renders the receiver email' do
-      expect(@mail.to).to eq([@user.email]) #change me?
+      expect(@mail.to).to eq([@user.email])
     end
 
     it 'renders the sender email' do
-     expect(@mail.from).to eq(["admin@stockrocker.co.uk"])
+     expect(@mail.from).to eq(["life.admin@stockrocker.co.uk"])
     end
 
 end
