@@ -1,0 +1,16 @@
+<h1>Your Songs!</h1>
+<div class="bs-component">
+  <div class="col-md-10 col-md-offset-1">
+    <%= render 'show' %>
+	<h1 class="center">Upload a new mp3</h1>
+	  <div class="well bs-component">
+        <%= simple_form_for(@song) do |f| %>
+  		  <%= render 'shared/error_messages', object: f.object %>
+ 	      <%= f.input :artist, placeholder: "Artist" %>
+ 	      <%= f.input :title, placeholder: "Song Title" %>
+ 	      <%= f.input :audio, placeholder: "Audio here" %>
+ 	      <%= f.submit "Upload", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+  </div>
+</div>	

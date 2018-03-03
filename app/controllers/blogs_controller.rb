@@ -12,6 +12,7 @@ class BlogsController < ApplicationController
 
   def show
     @comments = @blog.comments.order_all
+    @songs = Song.all.limit(5)
   end
 
   def new

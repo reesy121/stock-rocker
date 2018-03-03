@@ -10,11 +10,13 @@ Rails.application.routes.draw do
   get 'about'     =>  'static_pages#about'
   get 'contact'   =>  'contacts#new'
   post 'contact'  =>  'contacts#create'
+
   resources :blogs do
     resources :comments, :only => [:create]
   end
   resources :categories, only: [:show, :index]
   resources :comments, only: [:destroy]
+  resources :songs, only: [:index, :create, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

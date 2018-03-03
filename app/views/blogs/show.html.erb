@@ -18,5 +18,13 @@
 		<div class="well bs-component">
 			<%= render 'comments/show' %>
 		</div>
-	</div>	
+	</div>
+	<div class="col-md-10 col-md-offset-1">
+	  <% if @songs.any? %>
+	    <div class="well bs-component">
+	  	  <h3 class="center">Stock Rocker Songs</h3>
+	      <%= render 'songs/show' %>
+	    </div>
+	  <% end %>
+    </div>
 </div>
