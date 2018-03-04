@@ -85,3 +85,14 @@ def contact_attributes(overrides = {})
     email: "admin@reesy121.co.uk"
     }.merge(overrides)
 end
+#
+def song_attributes(overrides = {})
+  {
+    title: "Silver Tongue", 
+    artist: "X-32", 
+    audio_file_name: "Silver_Tougne.mp3", 
+    audio_content_type: "audio/mp3", 
+    audio_file_size: 8108482, 
+    audio_updated_at: "2018-03-04 11:08:51"
+  }
+end

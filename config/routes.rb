@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
   mount Ckeditor::Engine => '/ckeditor'
 
-  #Blog.nil? ? "root 'blogs#index'" : "root 'blogs#show', id: Blog.last.id"
-  root 'blogs#show', id: Blog.nil? ? 1 : Blog.last.id
-  #root 'blogs#index'
+  #Blog.nil? ? "root 'blogs#index'" : "root 'blogs#show', id: Blog.last.id" 
+  if Rails.env.test?
+    root 'blogs#index'
+  else
+    root 'blogs#show', id: Blog.nil? ? 1 : Blog.last.id
+  end
 
   get 'about'     =>  'static_pages#about'
   get 'contact'   =>  'contacts#new'
