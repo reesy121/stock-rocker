@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
-  mount Ckeditor::Engine => '/ckeditor'
 
+  mount Ckeditor::Engine => '/ckeditor'
+  devise_for :users, :controllers => { registrations: 'registrations' }
   #Blog.nil? ? "root 'blogs#index'" : "root 'blogs#show', id: Blog.last.id" 
   if Rails.env.test?
     root 'blogs#index'
