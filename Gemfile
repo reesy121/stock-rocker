@@ -18,7 +18,7 @@ gem 'devise'
 
 # For HTML Editor
 gem "paperclip", "~> 5.0.0.beta1"
-gem "ckeditor"
+gem 'ckeditor', github: 'galetahub/ckeditor'
 # Simple to help integrate with caccon
 gem 'simple_form'
 # Cocoon to make child records in parent form
