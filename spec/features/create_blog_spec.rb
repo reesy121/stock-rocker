@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe "Creating a new blog", js: true do
-	# need admin user to create blog
 	before do
+		# need admin user to create blog
 		@user = User.create!(user_attributes(admin: true))
 		@category = Category.create!(name: "Rock 'n' Roll")
 		sign_in(@user)

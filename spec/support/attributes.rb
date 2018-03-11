@@ -86,13 +86,11 @@ def contact_attributes(overrides = {})
     }.merge(overrides)
 end
 #
-def song_attributes(overrides = {})
+def song_attributes(overrides = {}, file="#{Rails.root}/spec/support/fixtures/2mb.mp3")
+  audio = File.new(file)
   {
     title: "Silver Tongue", 
     artist: "X-32", 
-    audio_file_name: "Silver_Tougne.mp3", 
-    audio_content_type: "audio/mp3", 
-    audio_file_size: 8108482, 
-    audio_updated_at: "2018-03-04 11:08:51"
-  }
+    audio:  audio
+  }.merge(overrides)
 end

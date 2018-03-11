@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
 		else
 			flash[:danger] = "Your comment couldn't be created."
 			@comments = @blog.comments.order_all
+			@songs = Song.all.limit(5)
 			render "blogs/show" #try and render so fake data is still in there?
 		end
 	end

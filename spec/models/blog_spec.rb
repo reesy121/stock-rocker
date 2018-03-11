@@ -100,7 +100,7 @@ RSpec.describe Blog, type: :model do
 	  end
    end
 
-   context "Valid blog" do
+   context "valid blog" do
 
    	before do
    		@blog = Blog.new(blog_attributes(user_id: @user.id))
