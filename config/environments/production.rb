@@ -69,13 +69,15 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   # SMTP settings
   ActionMailer::Base.smtp_settings = {
-    :port           => 587,
-    :address        => "smtp.mailgun.org",
-    #:domain         => ENV['domain'],
-    :user_name      => ENV['MG_USERNAME'],
-    :password       => ENV['MG_PASSWORD'],
-    :authentication => :plain,
-    :enable_starttls_auto => true
+    address:              "smtp.zoho.com", 
+    port:                 465,                 
+    user_name:            'life.admin@stockrocker.co.uk',
+    domain:               'stockrocker.co.uk',
+    password:             ENV['ZOHOEMAIL'],        
+    authentication:       :login,
+    ssl:                  true,
+    tls:                  true,
+    enable_starttls_auto: true    
   }
   Rails.application.routes.default_url_options[:host] = 'stockrocker.co.uk'
 

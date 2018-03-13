@@ -7,7 +7,6 @@ describe "Creating a user" do
   	visit root_url
 
   	click_link "Login"
-
   	click_link "Or Sign up"
 
   	fill_in "First name", with: "Ruby"
@@ -21,7 +20,11 @@ describe "Creating a user" do
     expect(page).to have_text("Welcome! You have signed up successfully.")
     expect(page).to have_text("Logout")
     expect(page).to have_text("Your User")
+    expect(page).to have_text("Blogs")
     expect(page).not_to have_text("Login")
+    expect(page).not_to have_text("Categories")
+    expect(page).not_to have_text("Contact")
+    expect(page).not_to have_text("Songs") #admin user only
 
 
   end
