@@ -31,7 +31,7 @@ class SongsController < ApplicationController
     end
 
     def set_songs
-      @songs = Song.all 
+      @songs = Song.all.order('created_at desc')
     end
 
     def song_params
