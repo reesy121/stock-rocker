@@ -13,6 +13,7 @@ class BlogsController < ApplicationController
   def show
     @comments = @blog.comments.order_all
     @songs = Song.all.order('created_at desc')
+  end
 
   def new
     @blog = Blog.new
